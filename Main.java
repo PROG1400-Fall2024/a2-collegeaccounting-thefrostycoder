@@ -26,6 +26,16 @@ public class Main {
                     Student newStudent = new Student(studentName, studentAddr, studentYear);
                     studentList.add(newStudent);
                     break;
+                case 1:
+                    //Staff Adding
+                    String staffName = JOptionPane.showInputDialog(null, "Enter Staff Name:", "Input", JOptionPane.INFORMATION_MESSAGE);
+                    String staffAddr = JOptionPane.showInputDialog(null, "Enter Staff Address:", "Input", JOptionPane.INFORMATION_MESSAGE);
+                    int staffYearsOfService = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter Staff Years of Service:", "Input", JOptionPane.INFORMATION_MESSAGE));
+
+                    //Build and add the new student
+                    Staff newStaff = new Staff(staffName, staffAddr, staffYearsOfService);
+                    staffList.add(newStaff);
+                    break;
                 case -1:
                     isRunning = false;
                     break;
