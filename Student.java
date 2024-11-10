@@ -5,6 +5,7 @@ public class Student extends Person {
     public Student(String name, String addr, int year){
         super(name, addr);
         this.year = year;
+        this.fee = (year - 1) * 100 + 3000;
     }
 
     public int getYear(){
@@ -17,6 +18,6 @@ public class Student extends Person {
 
     @Override
     public String toString(){
-        return String.format("Name: %s | Address: %s | Year: %d", this.getName(), this.getAddress(), this.year);
+        return String.format("Name: %s | Address: %s | Year: %d | Fee: $%.2f", this.getName(), this.getAddress(), this.year, this.fee);
     }
 }
