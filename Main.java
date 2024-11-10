@@ -38,12 +38,12 @@ public class Main {
                     break;
                 case 2:
                     //Reporting Feature
-                    String reportString = "Students:";
+                    String reportString = String.format("Students [Total: %d]:", studentList.size());
                     for (Student student : studentList){
                         reportString = String.join("\n", reportString, student.toString());
                     }
 
-                    reportString = String.join("\n", reportString, "\nStaff:");
+                    reportString = String.join("\n", reportString, String.format("\nStaff [Total: %d]:", staffList.size()));
                     for (Staff staff : staffList){
                         reportString = String.join("\n", reportString, staff.toString());
                     }
