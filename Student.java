@@ -5,7 +5,7 @@ public class Student extends Person {
     public Student(String name, String addr, int year){
         super(name, addr);
         this.year = year;
-        this.fee = (year - 1) * 100 + 3000;
+        this.fee = calcFee(year);
     }
 
     public int getYear(){
@@ -14,6 +14,16 @@ public class Student extends Person {
 
     public void setYear(int year){
         this.year = year;
+        //Update pay accordingly
+        setFee(year);
+    }
+
+    private void setFee(int year){
+        this.fee = calcFee(year);
+    }
+
+    public double calcFee(int year){
+        return (year - 1) * 100 + 3000;
     }
 
     @Override

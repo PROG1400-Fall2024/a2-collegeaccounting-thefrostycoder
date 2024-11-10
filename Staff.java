@@ -5,7 +5,7 @@ public class Staff extends Person {
     public Staff(String name, String addr, int yearsOfService){
         super(name, addr);
         this.yearsOfService = yearsOfService;
-        this.salary = (yearsOfService * 500) + 50000;
+        this.salary = calcSalary(yearsOfService);
     }
 
     public int getYearsOfService(){
@@ -14,10 +14,19 @@ public class Staff extends Person {
 
     public void setYearsOfService(int yearsOfService){
         this.yearsOfService = yearsOfService;
+        setSalary(yearsOfService);
+    }
+
+    private void setSalary(int year){
+        this.salary = calcSalary(yearsOfService);
+    }
+
+    public double calcSalary(int year){
+        return (yearsOfService * 500) + 50000;
     }
 
     @Override
     public String toString(){
-        return String.format("Name: %s | Address: %s | Years of Service: %d | Salary: %.2f", this.getName(), this.getAddress(), this.yearsOfService, this.salary);
+        return String.format("Name: %s | Address: %s | Years of Service: %d | Salary: $%.2f", this.getName(), this.getAddress(), this.yearsOfService, this.salary);
     }
 }
