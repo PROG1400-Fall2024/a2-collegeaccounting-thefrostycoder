@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         //Store the staff/students for future reporting
-        ArrayList<Student> studentList = new ArrayList<Student>();
-        ArrayList<Staff> staffList = new ArrayList<Staff>();
+        ArrayList<Student> studentList = new ArrayList<>();
+        ArrayList<Staff> staffList = new ArrayList<>();
 
         //Lock the program into a loop
         boolean isRunning = true;
@@ -35,6 +35,20 @@ public class Main {
                     //Build and add the new student
                     Staff newStaff = new Staff(staffName, staffAddr, staffYearsOfService);
                     staffList.add(newStaff);
+                    break;
+                case 2:
+                    //Reporting Feature
+                    String reportString = "Students:";
+                    for (Student student : studentList){
+                        reportString = String.join("\n", reportString, student.toString());
+                    }
+
+                    reportString = String.join("\n", reportString, "\nStaff:");
+                    for (Staff staff : staffList){
+                        reportString = String.join("\n", reportString, staff.toString());
+                    }
+                    JOptionPane.showMessageDialog(null, reportString, "Final Report", JOptionPane.PLAIN_MESSAGE);
+                    isRunning = false;
                     break;
                 case -1:
                     isRunning = false;
