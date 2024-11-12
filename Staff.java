@@ -21,8 +21,12 @@ public class Staff extends Person {
         this.salary = calcSalary(yearsOfService);
     }
 
-    public double calcSalary(int year){
-        return (yearsOfService * 500) + 50000;
+    public double getSalary(){
+        return this.salary;
+    }
+
+    private double calcSalary(int years){
+        return (years * 500) + 50000;
     }
 
     @Override

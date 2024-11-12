@@ -22,7 +22,11 @@ public class Student extends Person {
         this.fee = calcFee(year);
     }
 
-    public double calcFee(int year){
+    public double getFee(){
+        return this.fee;
+    }
+
+    private double calcFee(int year){
         return (year - 1) * 100 + 3000;
     }
 
