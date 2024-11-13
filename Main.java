@@ -25,18 +25,22 @@ public class Main {
                 case 2:
                     //Reporting Feature
                     //Students
-                    String reportString = String.format("Students [Total: %d]:", studentList.size());
+                    String reportString = String.format("Students [Total: %d]:\n", studentList.size());
                     double weeklyFees = 0, weeklyPays = 0;
+                    int studentIndex = 1;
                     for (Student student : studentList) {
                         weeklyFees += student.getFee();
-                        reportString = String.join("\n", reportString, student.toString());
+                        reportString += studentIndex++ + ". ";
+                        reportString += student + "\n";
                     }
 
                     //Staff
-                    reportString = String.join("\n", reportString, String.format("\nStaff [Total: %d]:", staffList.size()));
+                    reportString = String.join("\n", reportString, String.format("\nStaff [Total: %d]:\n", staffList.size()));
+                    int staffIndex = 1;
                     for (Staff staff : staffList) {
                         weeklyPays += staff.getSalary();
-                        reportString = String.join("\n", reportString, staff.toString());
+                        reportString += staffIndex++ + ". ";
+                        reportString += staff + "\n";
                     }
 
                     //Calculate Totals
